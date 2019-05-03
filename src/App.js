@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Searchbar from './searchbar/searchbar'
+import ResultsList from './resultsList/resultsList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+class App extends Component {
+
+  // state lives here, contains data about books
+  
+  // make API call each time submit button is clicked
+  // API call will be in this component, in handleSearch method
+
+  // pass handleSearch to the Searchbar component
+
+  render() {
+    return (
+      <main className='App'>
+      <header>
+        <h1>Google Book Search</h1>
+        <Searchbar />
       </header>
-    </div>
-  );
+      <ResultsList />
+    </main>
+    );
+  }
 }
 
 export default App;
