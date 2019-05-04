@@ -9,7 +9,7 @@ class App extends Component {
       search: '',
       printType: 'all',
       filter: '',
-      results: []
+      results: {},
     }
   }
 
@@ -46,14 +46,12 @@ class App extends Component {
     }
 
     fetch(url, options)
-      .then(response => response.json)
-      .then(responseJson => {
-        this.setState({results: responseJson.items})
-      });
+      .then(res => res.json())
+      .then(data => {
+        this.setState({results: data.items})
+      })
   }
 
-
-  // https://www.googleapis.com/books/v1/volumes?q={search}&filter={filter}&printType={printType}&projection=lite
 
   render() {
     return (
