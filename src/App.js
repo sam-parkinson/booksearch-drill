@@ -9,7 +9,7 @@ class App extends Component {
       search: '',
       printType: 'all',
       filter: '',
-      results: {},
+      results: [],
     }
   }
 
@@ -64,7 +64,8 @@ class App extends Component {
           updateFilter={item => this.updateFilter(item)}
           handleSearch={e => this.handleSearch(e)}/>
       </header>
-      <ResultsList />
+      <ResultsList
+        results={this.state.results}/>
     </main>
     );
   }
